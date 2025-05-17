@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "module": "index.ts",
   "type": "module",
-  "workspaces": [
-    "example"
-  ],
   "devDependencies": {
     "@types/bun": "latest"
   },

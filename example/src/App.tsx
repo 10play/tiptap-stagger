@@ -1,7 +1,8 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Markdown } from "tiptap-markdown";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { StaggerExtension } from "../../src/StaggerExtension";
 
 const defaultContent = `
 <h1>Welcome to the Tiptap Editor</h1>
@@ -36,6 +37,7 @@ export default function App() {
   const [content, setContent] = useState(defaultContent);
   const [readonlyContent, setReadonlyContent] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
+  const readonlyEditorRef = useRef<HTMLDivElement>(null);
 
   const editor = useEditor({
     extensions: [StarterKit, Markdown],
@@ -46,7 +48,7 @@ export default function App() {
   });
 
   const readonlyEditor = useEditor({
-    extensions: [StarterKit, Markdown],
+    extensions: [StarterKit, Markdown, StaggerExtension],
     content: readonlyContent,
     editable: false,
   });
@@ -54,6 +56,12 @@ export default function App() {
   useEffect(() => {
     if (readonlyEditor && readonlyContent) {
       readonlyEditor.commands.setContent(readonlyContent);
+
+      // Auto-scroll when content changes
+      if (readonlyEditorRef.current) {
+        const element = readonlyEditorRef.current;
+        element.scrollTop = element.scrollHeight;
+      }
     }
   }, [readonlyContent, readonlyEditor]);
 
@@ -96,7 +104,7 @@ export default function App() {
 
   return (
     <div className="editor-container" style={containerStyle}>
-      <h1 className="editor-title">Tiptap Editor</h1>
+      <h1 className="editor-title">Tiptap Stagger</h1>
 
       <div style={{ display: "flex", gap: "40px", width: "100%" }}>
         <div className="editor-wrapper" style={{ flex: 1, minWidth: "500px" }}>
@@ -184,6 +192,7 @@ export default function App() {
             editor={readonlyEditor}
             className="editor-content"
             style={editorStyle}
+            ref={readonlyEditorRef}
           />
         </div>
       </div>
