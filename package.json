@@ -1,6 +1,6 @@
 {
   "name": "@10play/tiptap-stagger",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "module": "index.ts",
   "type": "module",
   "main": "dist/index.js",
@@ -9,6 +9,11 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css",
       "types": "./dist/index.d.ts"
     }
   },
