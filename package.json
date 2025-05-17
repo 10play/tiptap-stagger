@@ -3,6 +3,16 @@
   "version": "0.0.1",
   "module": "index.ts",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && bun build ./index.ts --entrypoints ./index.ts --outdir dist --minify --target browser --format esm && tsc -p tsconfig.build.json",
+    "dev": "rm -rf dist && bun build ./index.ts --entrypoints ./index.ts --outdir dist --watch",
+    "prepublishOnly": "bun run build"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
