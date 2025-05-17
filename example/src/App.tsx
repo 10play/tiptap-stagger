@@ -7,29 +7,36 @@ import { useState, useEffect, useRef } from "react";
 
 const defaultContent = `
 <h1>Welcome to the Tiptap Editor</h1>
-<p>This is a rich text editor that supports <strong>bold</strong>, <em>italic</em>, and many other formatting options.</p>
+<p>This is a rich text editor that supports <strong>bold</strong>, <em>italic</em>, <strong><em>bold-italic</em></strong>, and <s>strikethrough</s> formatting options.</p>
 
-<h2>Features</h2>
+<h2>Inspirational Quotes</h2>
+<blockquote>
+  <p>The future belongs to those who believe in the beauty of their dreams.</p>
+  <p>Eleanor Roosevelt</p>
+</blockquote>
+
+<p>As Steve Jobs once said, <strong>"Innovation distinguishes between a leader and a follower."</strong></p>
+
+<h2>Text Styling Examples</h2>
 <ul>
-  <li>Text formatting with <strong>bold</strong> and <em>italic</em></li>
-  <li>Different heading levels</li>
-  <li>Bullet lists like this one</li>
-  <li>Ordered lists</li>
-  <li>Code blocks</li>
+  <li><strong>Bold text</strong> for emphasis</li>
+  <li><em>Italic text</em> for subtle emphasis</li>
+  <li><s>Strikethrough</s> for outdated content</li>
+  <li><strong><em>Bold and italic</em></strong> for maximum emphasis</li>
+  <li>Regular text mixed with <strong>bold</strong> and <em>italic</em> words</li>
 </ul>
 
-<h2>Code Example</h2>
-<pre><code>function helloWorld() {
-  console.log("Hello, world!");
-}
-</code></pre>
-
-<h3>Ordered List Example</h3>
+<h3>Famous Literary Quotes</h3>
 <ol>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item</li>
+  <li>"<strong>All that we see or seem is but a dream within a dream.</strong>" <em>— Edgar Allan Poe</em></li>
+  <li>"It is <s>never</s> <strong>always</strong> a mistake to not follow your heart." <em>— Unknown</em></li>
+  <li>"<em>In the midst of chaos, there is also opportunity.</em>" <strong>— Sun Tzu</strong></li>
 </ol>
+
+<blockquote>
+  <p><strong><em>The only limit to our realization of tomorrow will be our doubts of today.</em></strong></p>
+  <p>— Franklin D. Roosevelt</p>
+</blockquote>
 
 <p>Try editing this content and watch it stream to the right editor when you click the "Stream Content" button!</p>
 `;
