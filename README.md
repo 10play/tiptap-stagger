@@ -4,6 +4,8 @@ A Tiptap extension that adds staggered animation to text as it appears in the ed
 
 ![Tiptap Stagger Demo](./example/assets/demo.gif)
 
+[![npm version](https://badge.fury.io/js/@10play%2Ftiptap-stagger.svg?icon=si%3Anpm)](https://badge.fury.io/js/@10play%2Ftiptap-stagger)
+
 ## Features
 
 - Adds staggered animations to text as it's added to the editor
