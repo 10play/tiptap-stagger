@@ -30,6 +30,7 @@ bun add @10play/tiptap-stagger
 ### In React with @tiptap/react
 
 ```tsx
+import "@10play/tiptap-stagger/styles.css";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { StaggerExtension } from "@10play/tiptap-stagger";
@@ -49,6 +50,7 @@ const Editor = () => {
 
 ```vue
 <script setup>
+import "@10play/tiptap-stagger/styles.css";
 import { useEditor, EditorContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
 import { StaggerExtension } from "@10play/tiptap-stagger";

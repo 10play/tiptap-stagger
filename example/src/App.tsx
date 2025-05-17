@@ -1,8 +1,9 @@
+import "@10play/tiptap-stagger/styles.css";
+import { StaggerExtension } from "@10play/tiptap-stagger";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Markdown } from "tiptap-markdown";
 import { useState, useEffect, useRef } from "react";
-import { StaggerExtension } from "../../src/StaggerExtension";
 
 const defaultContent = `
 <h1>Welcome to the Tiptap Editor</h1>
